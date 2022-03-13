@@ -1,0 +1,3 @@
+<div class="user">
+    <h3>Hello ${user.firstName} ${user.lastName}</h3>
+</div>

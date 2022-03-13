@@ -1,0 +1,3 @@
+<div class="item">
+    <p>Your price for ${item.name} is $${item.cost?string.currency}!</p>
+</div>
