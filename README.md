@@ -58,7 +58,7 @@ The views are used by assigning tags which are replaced by getting the objects f
 </div>
 
 ```
-
+### item.view
 ```html
 
 <div class="item">
