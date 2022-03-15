@@ -2,7 +2,7 @@
 
 ## A framework which allows users to create views while connecting models.
 
-
+<br />
 The hooks are classes that are added to elements which hook the views to the page. We also need to make sure to include the script tag with a type of module at the bottom of the page.
 
 ## index.html
@@ -26,7 +26,7 @@ The hooks are classes that are added to elements which hook the views to the pag
 
 ```
 
-
+<br />
 In using a json object you are essentially assigning the tags in the views through dot notation.
 
 ## model.json
@@ -47,7 +47,7 @@ In using a json object you are essentially assigning the tags in the views throu
 
 ```
 
-
+<br />
 The views are used by assigning tags which are replaced by getting the objects from the json file.
 
 ## user.view
@@ -67,7 +67,7 @@ The views are used by assigning tags which are replaced by getting the objects f
 
 ```
 
-
+<br />
 The controller starts out by importing the jmfcool object from the parser.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
 
 ## controller.js
@@ -114,14 +114,14 @@ window.addEventListener("load",controller.init,false);
 
 ```
 
-
+<br />
 The below results is the result of the process that we have described above.
 
 ## Results
 ```
 
-Hello John Doe
+	Hello John Doe
 
-Your price for Oranges is $18.50!
+	Your price for Oranges is $18.50!
 
 ```
