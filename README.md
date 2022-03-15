@@ -1,6 +1,6 @@
 # Jmfcool.js · ![GitHub](https://img.shields.io/github/license/jmfcool/jmfcool.js?color=blue) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jmfcool/jmfcool.js) ![GitHub all releases](https://img.shields.io/github/downloads/jmfcool/jmfcool.js/total?color=green)
 
-# A framework which allows users to create views while connecting models.
+## A framework which allows users to create views while connecting models.
 
 
 The hooks are classes that are added to elements which hook the views to the page. We also need to make sure to include the script tag with a type of module at the bottom of the page.
