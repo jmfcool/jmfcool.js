@@ -1,13 +1,13 @@
 # Jmfcool.js · ![GitHub](https://img.shields.io/github/license/jmfcool/jmfcool.js?color=blue) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/jmfcool/jmfcool.js) ![GitHub all releases](https://img.shields.io/github/downloads/jmfcool/jmfcool.js/total?color=green)
 
-Jmfcool.js is a framework which allows users to create views while connecting models.
+# A framework which allows users to create views while connecting models.
 
 
 The hooks are classes that are added to elements which hook the views to the page. We also need to make sure to include the script tag with a type of module at the bottom of the page.
 
 ## index.html
-
 ```html
+
 <html>
 	<head>
 		<title>Jmfcool.js</title>
@@ -23,12 +23,54 @@ The hooks are classes that are added to elements which hook the views to the pag
 	</body>
 	<script type="module" src="controller.js"></script>
 </html>
+
 ```
+
+
+In using a json object you are essentially assigning the tags in the views through dot notation.
+
+## model.json
+```json
+
+{
+	"user" : 
+		{
+		"firstName" : "John",
+		"lastName" : "Doe"
+	},
+	"item" : 
+		{
+		"cost" : 18.5000,
+		"name" : "Oranges"
+	}
+}
+
+```
+
+
+The views are used by assigning tags which are replaced by getting the objects from the json file.
+
+## user.view
+```html
+
+<div class="user">
+	<h3>Hello ${user.firstName} ${user.lastName}</h3>
+</div>
+
+```
+
+```html
+
+<div class="item">
+	<p>Your price for ${item.name} is $${item.cost?string.currency}!</p>
+</div>
+
+```
+
 
 The controller starts out by importing the jmfcool object from the parser.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
 
 ## controller.js
-
 ```javascript
 
 import { jmfcool } from './parser.js';
@@ -69,5 +111,17 @@ var controller = {
 };
 
 window.addEventListener("load",controller.init,false);
+
+```
+
+
+The below results is the result of the process that we have described above.
+
+## Results
+```
+
+Hello John Doe
+
+Your price for Oranges is $18.50!
 
 ```
