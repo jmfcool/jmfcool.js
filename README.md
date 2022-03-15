@@ -2,6 +2,29 @@
 
 Jmfcool.js is a framework which allows users to create views while connecting models.
 
+
+The hooks are classes that are added to elements which hook the views to the page. We also need to make sure to include the script tag with a type of module at the bottom of the page.
+
+## index.html
+
+```html
+<html>
+	<head>
+		<title>Jmfcool.js</title>
+		<style>
+			h2 span { font-weight: normal; font-style: italic; font-size: 18px; }
+			h3 { margin-bottom: 0; }
+			p { margin-top: 0; }
+		</style>
+	</head>
+	<body>
+		<div class="response-user"></div>
+		<div class="response-item"></div>
+	</body>
+	<script type="module" src="controller.js"></script>
+</html>
+```
+
 The controller starts out by importing the jmfcool object from the parser.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
 
 ## controller.js
