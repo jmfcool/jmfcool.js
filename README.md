@@ -48,7 +48,7 @@ In using a json object you are essentially assigning the tags in the views throu
 ```
 
 <br />
-Views are used by utilizing tags that are replaced when accessing the objects from the json file and then ran through the parser that places the proper information which replaces the tag and renders it to the page.
+Views are used by utilizing tags that are replaced when accessing the objects from the assigned json file and then ran through the parser that places the proper information which replaces the tag and renders it to the page.
 
 ### user.view
 ```html
