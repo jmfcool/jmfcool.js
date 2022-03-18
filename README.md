@@ -34,12 +34,12 @@ In using a json object you are essentially assigning the tags in the views throu
 
 {
 	"user" : 
-		{
+	{
 		"firstName" : "John",
 		"lastName" : "Doe"
 	},
 	"item" : 
-		{
+	{
 		"cost" : 18.5000,
 		"name" : "Oranges"
 	}
