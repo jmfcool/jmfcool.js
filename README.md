@@ -27,7 +27,7 @@ The hooks are classes that are added to elements which hook the views to the pag
 ```
 
 <br />
-In using a json object you are essentially assigning the tags in the views through dot notation.
+Models are json objects that are utilized to build the tags when ran through the parser script through dot notation. Using promises, setup included in the controller script, we can include multiple models. Models can be custom names the only requirement is that the json extension is used with the proper format.
 
 ### model.json
 ```json
