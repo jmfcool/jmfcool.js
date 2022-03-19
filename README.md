@@ -3,7 +3,7 @@
 ### A framework which allows users to create views while connecting models.
 
 <br />
-The hooks are classes that are added to elements which hook the views to the page. We also need to make sure to include the script tag with a type of module at the bottom of the page.
+Hooks are classes that are added to elements which hook the views to the page when the page is rendered. We also need to make sure to include the script tag with a type of module at the bottom of the page so it loads once the page has loaded. The html page can be any name as long as the procedure described is followed.
 
 ### index.html
 ```html
@@ -115,7 +115,7 @@ window.addEventListener("load",controller.init,false);
 ```
 
 <br />
-The below results is the result of the process that we have described above.
+The below results is the result of the views and the model being ran through the parser. Then it's rendered to the page through the hooks. The data is accessed using callbacks from the promises objects and passed to the render object which returns the parsed view and replaces the tags with the information in the models objects.
 
 ### Results
 ```
