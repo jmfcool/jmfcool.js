@@ -62,7 +62,7 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 ```html
 
 <div class="item">
-	<p>Your price for ${item.name} is $${item.cost?string.currency}!</p>
+	<p>Your price for ${item.name} is $${item.cost?currency}!</p>
 </div>
 
 ```
