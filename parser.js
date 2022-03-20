@@ -3,11 +3,8 @@ var jmfcool = jmfcool || {};
 jmfcool.parser = {
     formatters : 
     {
-        string : 
-        {
-            this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
-            currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; }  
-        } 
+        this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
+        currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
     }   
 };
 
