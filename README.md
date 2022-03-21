@@ -68,33 +68,27 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 ```
 
 <br />
-The controller starts out by importing the jmfcool object from the jmfcool.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
+The script starts by importing the jmfcool object from the jmfcool.js script. Then access the jmfcool.init method to run the internal methods. By using the jmfcool.model and jmfcool.view method we set callbacks to access the data. Lastly we call jmfcool.display to access the rendered view.
 
 ### controller.js
 ```javascript
 
 import { jmfcool } from './jmfcool.js';
 
-var controller = controller || {};
-    
-controller.init = function() 
+jmfcool.init()
 {
+    jmfcool.model('model.json', function(model)
     {
-        jmfcool.model('model.json', function(model)
+        jmfcool.view('user.view', function(view)
         {
-            jmfcool.view('user.view', function(view)
-            {
-                jmfcool.display({ view:view, model:model, hook:'response-user' });
-            });
-            jmfcool.view('item.view', function(view)
-            {
-                jmfcool.display({ view:view, model:model, hook:'response-item' });
-            });
+            jmfcool.display({ view:view, model:model, hook:'response-user' });
         });
-    }
+        jmfcool.view('item.view', function(view)
+        {
+            jmfcool.display({ view:view, model:model, hook:'response-item' });
+        });
+    });
 };
-
-window.addEventListener('load',controller.init,false);
 
 ```
 
