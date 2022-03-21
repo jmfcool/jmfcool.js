@@ -27,7 +27,7 @@ Hooks are classes that are added to elements which hook the views to the page wh
 ```
 
 <br />
-Models are json objects that are utilized to build the tags when ran through the parser script through dot notation. Using promises, setup included in the controller script, we can include multiple models. Models can be custom names the only requirement is that the json extension is used with the proper format.
+Models are json objects that are utilized to build the tags when ran through the framework through dot notation. Using promises, setup included in the controller script, we can include multiple models. Models can be custom names the only requirement is that the json extension is used with the proper format.
 
 ### model.json
 ```json
@@ -48,7 +48,7 @@ Models are json objects that are utilized to build the tags when ran through the
 ```
 
 <br />
-Views are used by utilizing tags that are replaced when accessing the objects from the assigned json file and then ran through the parser that places the proper information which replaces the tag and renders it to the page.
+Views are used by utilizing tags that are replaced when accessing the objects from the assigned json file and then ran through the framework that places the proper information which replaces the tag and renders it to the page.
 
 ### user.view
 ```html
@@ -68,7 +68,7 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 ```
 
 <br />
-The controller starts out by importing the jmfcool object from the parser.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
+The controller starts out by importing the jmfcool object from the jmfcool.js script. Then include the controller object with its methods to load the views and the models by utilizing promises. Using callbacks we assign the data from the requests. Make sure to end the script by initializing the object and binding it to the window object.
 
 ### controller.js
 ```javascript
@@ -105,7 +105,7 @@ window.addEventListener("load",controller.init,false);
 ```
 
 <br />
-The below results is the result of the views and the model being ran through the parser. Then it's rendered to the page through the hooks. The data is accessed using callbacks from the promises objects and passed to the render object which returns the parsed view and replaces the tags with the information in the models objects.
+The below results is the result of the views and the model being ran through the framework. Then it's rendered to the page through the hooks. The data is accessed using callbacks from the promises objects and passed to the render object which returns the parsed view and replaces the tags with the information in the models objects.
 
 ### Results
 ```
