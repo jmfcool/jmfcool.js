@@ -9,7 +9,16 @@ jmfcool = {
     hook : function(name)
     {
         return document.getElementsByClassName(name)[0];
-    }
+    },
+    model : function(file, callback)
+    {
+        fetch(file).then(response => response.json()).then(data => callback(data));
+    },
+    view : function(file, callback)
+    {
+        fetch(file).then(response => response.text()).then(data => callback(data));
+    },
+    init : function() {}
 };
 
 jmfcool.display = function(args)
@@ -29,13 +38,13 @@ jmfcool.render = function(args)
     var view = args.view,
         model = args.model;
 
-    return jmfcool.view({ view:view, data:model });
+    return jmfcool.template({ view:view, model:model });
 };
 
-jmfcool.view = function(args)
+jmfcool.template = function(args)
 {
     var view = args.view,
-        data = args.data,
+        model = args.model,
         tags, tag, obj, tmp, filter;
 
     filter = /\$\{([^}]*)}/g;
@@ -50,7 +59,7 @@ jmfcool.view = function(args)
     {
         tag = tags[i].match(filter)[0];
         obj = tags[i].match(filter)[1];
-        tmp = jmfcool.evaluator({ data:data, obj:obj, type:'tags' });
+        tmp = jmfcool.evaluator({ model:model, obj:obj, type:'tags' });
         view = view.replace(tag,tmp);
     }
     
@@ -60,11 +69,11 @@ jmfcool.view = function(args)
 jmfcool.evaluator = function(args)
 {
     var obj = args.obj,
-        data = args.data,
+        model = args.model,
         type = args.type,
         object;
 
-    if(type === 'tags') object = jmfcool.getObject({ obj:obj, data:data });
+    if(type === 'tags') object = jmfcool.getObject({ obj:obj, model:model });
 
     return object;
 };
@@ -72,7 +81,7 @@ jmfcool.evaluator = function(args)
 jmfcool.getObject = function(args)
 {
     var obj = args.obj,
-        data = args.data,
+        model = args.model,
         lookup;
 
     if(/\?/.test(obj))
@@ -85,10 +94,9 @@ jmfcool.getObject = function(args)
 
     for (var i=0; i<lookup.length; i++)
     {
+        model = model[lookup[i]];
 
-        data = data[lookup[i]];
-
-        if (data === undefined) return '';
+        if (model === undefined) return '';
 
         if(/\?/.test(args.obj))
         {
@@ -96,11 +104,11 @@ jmfcool.getObject = function(args)
                 checks = args.obj.split('?');
 
             formatter = jmfcool.getFormatter({ checks:checks[1] });
-            data = formatter(data);
+            model = formatter(model);
         }
     }
     
-    return data;
+    return model;
 };
 
 jmfcool.getFormatter = function(args)
@@ -117,5 +125,7 @@ jmfcool.getFormatter = function(args)
 
     return obj;
 };
+
+window.addEventListener('load',jmfcool.init,false);
 
 export { jmfcool };

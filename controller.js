@@ -1,28 +1,16 @@
 import { jmfcool } from './jmfcool.js';
 
-var controller = {
-    model : function(file, callback)
+jmfcool.init()
+{
+    jmfcool.model('model.json', function(model)
     {
-        fetch(file).then(response => response.json()).then(data => callback(data));
-    },
-    view : function(file, callback)
-    {
-        fetch(file).then(response => response.text()).then(data => callback(data));
-    },
-    init : function()
-    {
-        controller.model('model.json', function(model)
+        jmfcool.view('user.view', function(view)
         {
-            controller.view('user.view', function(view)
-            {
-                jmfcool.display({ view:view, model:model, hook:'response-user' });
-            });
-            controller.view('item.view', function(view)
-            {
-                jmfcool.display({ view:view, model:model, hook:'response-item' });
-            });
+            jmfcool.display({ view:view, model:model, hook:'response-user' });
         });
-    }
+        jmfcool.view('item.view', function(view)
+        {
+            jmfcool.display({ view:view, model:model, hook:'response-item' });
+        });
+    });
 };
-
-window.addEventListener("load",controller.init,false);
