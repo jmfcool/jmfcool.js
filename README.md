@@ -8,20 +8,38 @@ Hooks are classes that are added to elements which hook the views to the page wh
 ### index.html
 ```html
 
-<html>
-	<head>
-		<title>Jmfcool.js</title>
-		<style>
-			h2 span { font-weight: normal; font-style: italic; font-size: 18px; }
-			h3 { margin-bottom: 0; }
-			p { margin-top: 0; }
-		</style>
-	</head>
-	<body>
-		<div class="response-user"></div>
-		<div class="response-item"></div>
-	</body>
-	<script type="module" src="controller.js"></script>
+<htm>
+    <head>
+        <title>Jmfcool.js</title>
+        <script>
+            
+            var example = example || {};
+
+            example.init = function()
+            {
+                document.addEventListener('click', function()
+                {
+                    document.getElementsByTagName('h3')[0].innerHTML = 'Hello Jane Doe';
+                });
+            }
+
+            window.addEventListener('load',example.init,false);
+
+        </script>
+        <style>
+
+            h3 { margin-bottom: 0; }
+            p { margin-top: 0; }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="response-user"></div>
+        <div class="response-item"></div>
+    
+    </body>
+    <script type="module" src="controller.js"></script>
 </html>
 
 ```
