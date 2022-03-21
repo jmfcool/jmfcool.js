@@ -75,24 +75,18 @@ The controller starts out by importing the jmfcool object from the jmfcool.js sc
 
 import { jmfcool } from './jmfcool.js';
 
-var controller = {
-    model : function(file, callback)
+var controller = controller || {};
+    
+controller.init = function() 
+{
     {
-        fetch(file).then(response => response.json()).then(data => callback(data));
-    },
-    view : function(file, callback)
-    {
-        fetch(file).then(response => response.text()).then(data => callback(data));
-    },
-    init : function()
-    {
-        controller.model('model.json', function(model)
+        jmfcool.model('model.json', function(model)
         {
-            controller.view('user.view', function(view)
+            jmfcool.view('user.view', function(view)
             {
                 jmfcool.display({ view:view, model:model, hook:'response-user' });
             });
-            controller.view('item.view', function(view)
+            jmfcool.view('item.view', function(view)
             {
                 jmfcool.display({ view:view, model:model, hook:'response-item' });
             });
@@ -100,7 +94,7 @@ var controller = {
     }
 };
 
-window.addEventListener("load",controller.init,false);
+window.addEventListener('load',controller.init,false);
 
 ```
 
