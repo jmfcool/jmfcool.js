@@ -1,19 +1,38 @@
 var jmfcool = jmfcool || {};
 
-jmfcool.parser = {
+jmfcool = {
     formatters : 
     {
         this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
         currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
-    }   
+    },
+    hook : function(name)
+    {
+        return document.getElementsByClassName(name)[0];
+    }
 };
 
-jmfcool.parser.render = function(args)
+jmfcool.display = function(args)
 {
-    return jmfcool.parser.view({ view:args.view, data:args.model });
+    var hook = args.hook,
+        view = args.view,
+        model = args.model,
+        display, render;
+    
+    display = jmfcool.hook(hook);
+    render = jmfcool.render({ view:view, model:model });
+    display.innerHTML = render;
 };
 
-jmfcool.parser.view = function(args)
+jmfcool.render = function(args)
+{
+    var view = args.view,
+        model = args.model;
+
+    return jmfcool.view({ view:view, data:model });
+};
+
+jmfcool.view = function(args)
 {
     var view = args.view,
         data = args.data,
@@ -31,26 +50,26 @@ jmfcool.parser.view = function(args)
     {
         tag = tags[i].match(filter)[0];
         obj = tags[i].match(filter)[1];
-        tmp = jmfcool.parser.evaluator({ data:data, obj:obj, type:'tags' });
+        tmp = jmfcool.evaluator({ data:data, obj:obj, type:'tags' });
         view = view.replace(tag,tmp);
     }
     
     return view;
 };
 
-jmfcool.parser.evaluator = function(args)
+jmfcool.evaluator = function(args)
 {
     var obj = args.obj,
         data = args.data,
         type = args.type,
         object;
 
-    if(type === 'tags') object = jmfcool.parser.getObject({ obj:obj, data:data });
+    if(type === 'tags') object = jmfcool.getObject({ obj:obj, data:data });
 
     return object;
 };
 
-jmfcool.parser.getObject = function(args)
+jmfcool.getObject = function(args)
 {
     var obj = args.obj,
         data = args.data,
@@ -76,7 +95,7 @@ jmfcool.parser.getObject = function(args)
             var checks, formatter;
                 checks = args.obj.split('?');
 
-            formatter = jmfcool.parser.getFormatter({ checks:checks[1] });
+            formatter = jmfcool.getFormatter({ checks:checks[1] });
             data = formatter(data);
         }
     }
@@ -84,10 +103,10 @@ jmfcool.parser.getObject = function(args)
     return data;
 };
 
-jmfcool.parser.getFormatter = function(args)
+jmfcool.getFormatter = function(args)
 {
     var checks = args.checks,
-        obj = jmfcool.parser.formatters,
+        obj = jmfcool.formatters,
         check = checks.split('.');
 
     for (var i=0; i<check.length; i++)
