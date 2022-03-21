@@ -8,7 +8,7 @@ Hooks are classes that are added to elements which hook the views to the page wh
 ### index.html
 ```html
 
-<htm>
+<html>
     <head>
         <title>Jmfcool.js</title>
         <script>
