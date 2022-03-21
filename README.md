@@ -73,41 +73,31 @@ The controller starts out by importing the jmfcool object from the parser.js scr
 ### controller.js
 ```javascript
 
-import { jmfcool } from './parser.js';
+import { jmfcool } from './jmfcool.js';
 
 var controller = {
-	model : function(file, callback)
-	{
-		fetch(file).then(response => response.json()).then(data => callback(data));
-	},
-	hook : function(name)
-	{
-		return document.getElementsByClassName(name)[0];
-	},
-	view : function(file, callback)
-	{
-		fetch(file).then(response => response.text()).then(data => callback(data));
-	},
-	init : function()
-	{
-		var display, render;   
-
-		controller.model('model.json', function(model)
-		{
-			controller.view('user.view', function(view)
-			{
-				display = controller.hook('response-user');
-				render = jmfcool.parser.render({ view:view, model:model });
-				display.innerHTML = render;
-			});
-			controller.view('item.view', function(view)
-			{
-				display = controller.hook('response-item');
-				render = jmfcool.parser.render({ view:view, model:model });
-				display.innerHTML = render;
-			});
-		});
-	}
+    model : function(file, callback)
+    {
+        fetch(file).then(response => response.json()).then(data => callback(data));
+    },
+    view : function(file, callback)
+    {
+        fetch(file).then(response => response.text()).then(data => callback(data));
+    },
+    init : function()
+    {
+        controller.model('model.json', function(model)
+        {
+            controller.view('user.view', function(view)
+            {
+                jmfcool.display({ view:view, model:model, hook:'response-user' });
+            });
+            controller.view('item.view', function(view)
+            {
+                jmfcool.display({ view:view, model:model, hook:'response-item' });
+            });
+        });
+    }
 };
 
 window.addEventListener("load",controller.init,false);
