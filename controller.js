@@ -1,4 +1,4 @@
-import { jmfcool } from './jmfcool.js';
+import { jmfcool } from './jmfcool.min.js';
 
 jmfcool.init()
 {
