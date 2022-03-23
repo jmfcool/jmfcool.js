@@ -7,11 +7,23 @@ gulp.task('compress', function()
     return gulp.src('jmfcool.js')
     .pipe(minify({
         ext:{
-            src:'.js',
             min:'.min.js'
-        }
+        },
+        noSource: true
     }))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('release'))
+});
+
+gulp.task('demo', function() 
+{
+    return gulp.src('jmfcool.js')
+    .pipe(minify({
+        ext:{
+            min:'.min.js'
+        },
+        noSource: true
+    }))
+    .pipe(gulp.dest('demo'))
 });
 
 gulp.task('major', function()
@@ -29,4 +41,4 @@ gulp.task('patch', function()
     return gulp.src('./package.json').pipe(bump({type:'patch'})).pipe(gulp.dest('./'));
 });
 
-gulp.task('build', gulp.parallel('compress'));
+gulp.task('build', gulp.parallel('compress','demo'));
