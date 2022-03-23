@@ -89,7 +89,7 @@ The script starts by importing the jmfcool object from the jmfcool.js script. Th
 ### controller.js
 ```javascript
 
-import { jmfcool } from './jmfcool.js';
+import { jmfcool } from './dist/jmfcool.min.js';
 
 jmfcool.init()
 {
