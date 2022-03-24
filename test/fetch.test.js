@@ -26,8 +26,15 @@ jmfcool.model = function(file, callback)
 describe('Fetch', () => {
 
     test('fetch model', async () => {
-        const response = await fetch('./model.json');
+        const response = await fetch('https://jmfcool.github.io/jmfcool.js/test/model.json');
         const result = await response.json();
+        console.info(result);
+        //expect(result.name).toBe('Leanne Graham');  // Success!
+    });
+
+    test('fetch view', async () => {
+        const response = await fetch('https://jmfcool.github.io/jmfcool.js/test/item.view');
+        const result = await response.text();
         console.info(result);
         //expect(result.name).toBe('Leanne Graham');  // Success!
     });
