@@ -49,9 +49,9 @@ jmfcool.template = function(args)
 
     filter = /\$\{([^}]*)}/g;
 
-    if(view.match(filter) === null) return view;
+    if(String(view).match(filter) === null) return view;
 
-    tags = view.match(filter);
+    tags = String(view).match(filter);
 
     filter = /\$\{([^}]*)}/;
 
