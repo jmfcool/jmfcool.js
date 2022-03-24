@@ -12,11 +12,11 @@ jmfcool = {
     },
     model : function(file, callback)
     {
-        fetch(file).then(response => response.json()).then(data => callback(data));
+        fetch(file).then(response => response.json()).then(data => callback(data)).catch(error => error);
     },
     view : function(file, callback)
     {
-        fetch(file).then(response => response.text()).then(data => callback(data));
+        fetch(file).then(response => response.text()).then(data => callback(data)).catch(error => error);
     },
     init : function() {}
 };
