@@ -4,7 +4,8 @@
 
 <br />
 Hooks are classes that are added to elements which hook the views to the page when the page is rendered. We also need to make sure to include the script tag with a type of module at the bottom of the page so it loads once the page has loaded. The html page can be any name as long as the procedure described is followed.
-<br />
+
+
 **Note:** Since views are rendered as html you can use native css and javascript. Below in the example, as well as in the package that can be downloaded, this is displayed.
 
 ### index.html
