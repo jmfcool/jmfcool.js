@@ -12,7 +12,7 @@ describe('Hook', () => {
         expect(hook).toBeUndefined();
     });
 
-    test('should be undefined', () => {
+    test('sets the hook', () => {
         var hook = jmfcool.hook('response-item');
         console.log('hook: ', hook);
         //expect(hook).toBeUndefined();
