@@ -2,6 +2,8 @@
 
 ### A framework which allows users to create views while connecting models.
 
+## Project
+
 ### Installing Project
 
 ```
