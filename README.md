@@ -3,8 +3,10 @@
 ### A framework which allows users to create views while connecting models.
 
 <br />
+
 Hooks are classes that are added to elements which hook the views to the page when the page is rendered. We also need to make sure to include the script tag with a type of module at the bottom of the page so it loads once the page has loaded. The html page can be any name as long as the procedure described is followed.
 
+<br />
 
 **Note:** Since views are rendered as html you can use native css and javascript. Below in the example, as well as in the package that can be downloaded, this is displayed.
 
@@ -46,6 +48,7 @@ Hooks are classes that are added to elements which hook the views to the page wh
 ```
 
 <br />
+
 Models are json objects that are utilized to build the tags when ran through the framework through dot notation. Using promises, setup included in the controller script, we can include multiple models. Models can be custom names the only requirement is that the json extension is used with the proper format.
 
 ### model.json
@@ -67,6 +70,7 @@ Models are json objects that are utilized to build the tags when ran through the
 ```
 
 <br />
+
 Views are used by utilizing tags that are replaced when accessing the objects from the assigned json file and then ran through the framework that places the proper information which replaces the tag and renders it to the page.
 
 ### user.view
@@ -87,6 +91,7 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 ```
 
 <br />
+
 The script starts by importing the jmfcool object from the jmfcool.js script. Then access the jmfcool.init method to run the internal methods. By using the jmfcool.model and jmfcool.view method we set callbacks to access the data. Lastly we call jmfcool.display to access the rendered view.
 
 ### controller.js
@@ -112,6 +117,7 @@ jmfcool.init()
 ```
 
 <br />
+
 The below results is the result of the views and the model being ran through the framework. Then it's rendered to the page through the hooks. The data is accessed using callbacks from the promises objects and passed to the render object which returns the parsed view and replaces the tags with the information in the models objects.
 
 ### Results
