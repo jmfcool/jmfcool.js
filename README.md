@@ -2,7 +2,7 @@
 
 ### A framework which allows users to create views while connecting models.
 
-## Installing Project
+### Installing Project
 
 ```
 git clone git@github.com:jmfcool/jmfcool.js.git
@@ -10,21 +10,18 @@ git clone git@github.com:jmfcool/jmfcool.js.git
 cd jmfcool.js
 
 npm install
-
 ```
 
-## Running Tests
+### Running Tests
 
 ```
 npm test
-
 ```
 
-## Running Build
+### Running Build
 
 ```
 gulp build
-
 ```
 
 ## Example
