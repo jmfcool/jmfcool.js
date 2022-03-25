@@ -8,7 +8,7 @@ The commands below will install the project and allow you to run the Jest tests.
 
 ## Project
 
-lones repository, directs you to the project, and installs the node packages to run the build and tests.
+Clones repository, directs you to the project, and installs the node packages to run the build and tests.
 
 ### Installing Project
 
