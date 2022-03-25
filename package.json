@@ -1,6 +1,6 @@
 {
     "name": "Jmfcool.js",
-    "version": "3.3.0",
+    "version": "3.4.0",
     "type": "module",
     "devDependencies": {
         "@babel/core": "^7.17.8",
@@ -24,7 +24,8 @@
         "automock": false,
         "resetMocks": false,
         "setupFiles": [
-            "./test/setup.js"
+            "./test/fetch.js",
+            "./test/dom.js"
         ]
     }
 }
