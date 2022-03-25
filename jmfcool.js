@@ -1,13 +1,13 @@
 var jmfcool = jmfcool || {};
 
 jmfcool.formatters = {
-    this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
-    currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
+    this : (o) => { if (typeof o != 'string') o = (o).toString(); return o; },
+    currency : (o) => { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
 };
 
 jmfcool.init = () => {};
 
-jmfcool.model = (file, callback) =>{
+jmfcool.model = (file, callback) => {
     fetch(file).then(response => response.json()).then(data => callback(data)).catch(error => error);
 },
 

@@ -3,8 +3,18 @@ import { jmfcool } from '../jmfcool.js';
 
 describe('Formatters', () => {
 
-    test('should be an object', () => {
+    test('jmfcool.formatters should be an object', () => {
         expect(jmfcool.formatters).toBeInstanceOf(Object);
+    });
+
+    test('jmfcool.formatters.this should be a function', () => {
+        var formatters = jmfcool.formatters;
+        expect(formatters.this).toBeInstanceOf(Function);
+    });
+
+    test('jmfcool.formatters.currency should be a function', () => {
+        var formatters = jmfcool.formatters;
+        expect(formatters.currency).toBeInstanceOf(Function);
     });
 
 });
