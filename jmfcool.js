@@ -1,28 +1,25 @@
 var jmfcool = jmfcool || {};
 
-jmfcool = {
-    formatters : 
-    {
-        this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
-        currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
-    },
-    hook : function(name)
-    {
-        return document.getElementsByClassName(name)[0];
-    },
-    model : function(file, callback)
-    {
-        fetch(file).then(response => response.json()).then(data => callback(data)).catch(error => error);
-    },
-    view : function(file, callback)
-    {
-        fetch(file).then(response => response.text()).then(data => callback(data)).catch(error => error);
-    },
-    init : function() {}
+jmfcool.formatters = {
+    this : function(o) { if (typeof o != 'string') o = (o).toString(); return o; },
+    currency : function(o) { if (typeof o == 'number') o = (o).toFixed(2); return o; } 
 };
 
-jmfcool.display = function(args)
-{
+jmfcool.init = () => {};
+
+jmfcool.model = (file, callback) =>{
+    fetch(file).then(response => response.json()).then(data => callback(data)).catch(error => error);
+},
+
+jmfcool.view = (file, callback) => {
+    fetch(file).then(response => response.text()).then(data => callback(data)).catch(error => error);
+}
+
+jmfcool.hook = (name) => {
+    return document.getElementsByClassName(name)[0];
+}  
+
+jmfcool.display = (args) => {
     var hook = args.hook,
         view = args.view,
         model = args.model,
@@ -33,16 +30,14 @@ jmfcool.display = function(args)
     display.innerHTML = render;
 };
 
-jmfcool.render = function(args)
-{
+jmfcool.render = (args) => {
     var view = args.view,
         model = args.model;
 
     return jmfcool.template({ view:view, model:model });
 };
 
-jmfcool.template = function(args)
-{
+jmfcool.template = (args) => {
     var view = args.view,
         model = args.model,
         tags, tag, obj, tmp, filter;
@@ -66,8 +61,7 @@ jmfcool.template = function(args)
     return view;
 };
 
-jmfcool.evaluator = function(args)
-{
+jmfcool.evaluator = (args) => {
     var obj = args.obj,
         model = args.model,
         type = args.type,
@@ -78,8 +72,7 @@ jmfcool.evaluator = function(args)
     return object;
 };
 
-jmfcool.getObject = function(args)
-{
+jmfcool.getObject = (args) => {
     var obj = args.obj,
         model = args.model,
         lookup;
@@ -111,8 +104,7 @@ jmfcool.getObject = function(args)
     return model;
 };
 
-jmfcool.getFormatter = function(args)
-{
+jmfcool.getFormatter = (args) => {
     var checks = args.checks,
         obj = jmfcool.formatters,
         check = checks.split('.');
