@@ -2,6 +2,33 @@
 
 ### A framework which allows users to create views while connecting models.
 
+## Installing Project
+
+```
+git clone git@github.com:jmfcool/jmfcool.js.git
+
+cd jmfcool.js
+
+npm install
+
+```
+
+## Running Tests
+
+```
+npm test
+
+```
+
+## Running Build
+
+```
+gulp build
+
+```
+
+## Example
+
 <br />
 
 Hooks are classes that are added to elements which hook the views to the page when the page is rendered. We also need to make sure to include the script tag with a type of module at the bottom of the page so it loads once the page has loaded. The html page can be any name as long as the procedure described is followed.
