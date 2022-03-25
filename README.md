@@ -2,6 +2,12 @@
 
 ### A framework which allows users to create views while connecting models.
 
+The commands below will install the project and allow you to run the Jest tests. The gulp command minifies the framework and adds it to the release directory as well as the demo directory. We also have a way to automatically version the project and tag it to push to GitHub for completing a release.
+
+<br />
+
+**Note:** You can create your own test in the test directory.
+
 ## Project
 
 ### Installing Project
