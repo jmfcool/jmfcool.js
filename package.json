@@ -1,6 +1,6 @@
 {
     "name": "Jmfcool.js",
-    "version": "3.7.0",
+    "version": "3.8.0",
     "devDependencies": {
         "@babel/core": "^7.17.8",
         "@babel/preset-env": "^7.16.11",
