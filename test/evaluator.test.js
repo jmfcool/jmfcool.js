@@ -30,13 +30,13 @@ describe('Evaluator', () => {
 
     test('return rendered string', () => {
         jmfcool.model('model.json', model);
-        var evaluator = jmfcool.evaluator({ model:model.mock.results[0].value, obj:'item.name', type:'tags' });
+        var evaluator = jmfcool.evaluator({ model:model.mock.results[0].value, value:'item.name', type:'tags' });
         expect(evaluator).toBe('Oranges');
     });
 
     test('return rendered currency', () => {
         jmfcool.model('model.json', model);
-        var evaluator = jmfcool.evaluator({ model:model.mock.results[0].value, obj:'item.cost?currency', type:'tags' });
+        var evaluator = jmfcool.evaluator({ model:model.mock.results[0].value, value:'item.cost?currency', type:'tags' });
         expect(evaluator).toBe('18.50');
     });
 
