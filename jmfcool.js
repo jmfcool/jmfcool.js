@@ -106,16 +106,16 @@ jmfcool.getObject = (args) => {
 
 jmfcool.getFormatter = (args) => {
     var checks = args.checks,
-        obj = jmfcool.formatters,
+        formatters = jmfcool.formatters,
         check = checks.split('.');
 
     for (var i=0; i<check.length; i++)
     {
-        obj = obj[check[i]];
-        if (obj === undefined) return null;
+        formatters = formatters[check[i]];
+        if (formatters === undefined) return null;
     }
 
-    return obj;
+    return formatters;
 };
 
 window.addEventListener('load',jmfcool.init,false);
