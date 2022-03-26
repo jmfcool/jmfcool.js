@@ -29,7 +29,8 @@ gulp.task('demo', function()
 
 gulp.task('build', gulp.parallel('release','demo'));
 
-gulp.task('jest', function () {
+gulp.task('jest', function() 
+{
     return gulp.src('test').pipe(jest({
       "testEnvironment": "jsdom",
       "verbose": true,
@@ -41,17 +42,29 @@ gulp.task('jest', function () {
     }));
 });
 
-gulp.task('add', function(){
+gulp.task('pull', function(done) 
+{
+    git.pull('origin', 'main', function (err) 
+    {
+        if (err) throw err;
+    });
+    done();
+});
+
+gulp.task('add', function() 
+{
     return gulp.src('.')
     .pipe(git.add());
 });
 
-gulp.task('commit', function(){
+gulp.task('commit', function() 
+{
     return gulp.src('.')
       .pipe(git.commit('Update repo from gulp'));
 });
 
-gulp.task('push', function(done){
+gulp.task('push', function(done) 
+{
     git.push('origin', function (err) 
     {
         if (err) throw err;
@@ -59,4 +72,4 @@ gulp.task('push', function(done){
     done();
 });
 
-gulp.task('git', gulp.parallel('add','commit','push'));
+gulp.task('git', gulp.parallel('pull','add','commit','push'));
