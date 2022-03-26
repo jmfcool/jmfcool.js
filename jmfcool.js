@@ -50,6 +50,8 @@ jmfcool.template = (args) => {
 
     filter = /\$\{([^}]*)}/;
 
+    console.log('tags: ', tags);
+
     for(var i=0; i<tags.length; i++)
     {
         tag = tags[i].match(filter)[0];
