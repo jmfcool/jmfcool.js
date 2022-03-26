@@ -39,11 +39,22 @@ The commands below sets the version in package.json and creates a tag to push to
 ```
 gulp git
 
-npm version *.*.* (Example: 3.5.0)
+--------------------------------------
 
-git push
+# From 1.0.0 -> 1.0.1
+npm version patch 
 
-git push --tags
+# From 1.0.1 -> 1.1.0
+npm version minor
+
+# From 1.1.0 -> 2.0.0
+npm version major
+
+--------------------------------------
+
+gulp push
+
+gulp tags
 ```
 
 ## Example
