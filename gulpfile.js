@@ -27,7 +27,7 @@ gulp.task('demo', function()
     .pipe(gulp.dest('demo'))
 });
 
-gulp.task('build', gulp.parallel('release','demo'));
+gulp.task('build', gulp.series('release','demo'));
 
 gulp.task('jest', function() 
 {
@@ -72,7 +72,7 @@ gulp.task('push', function(done)
     done();
 });
 
-gulp.task('git', gulp.parallel('add','commit','push'));
+gulp.task('git', gulp.series('add','commit','push'));
 
 gulp.task('tags', function(done)
 {
@@ -83,4 +83,4 @@ gulp.task('tags', function(done)
     done();
 });
 
-gulp.task('version', gulp.parallel('push','tags'));
+gulp.task('version', gulp.series('push','tags'));
