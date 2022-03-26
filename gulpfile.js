@@ -72,4 +72,13 @@ gulp.task('push', function(done)
     done();
 });
 
+gulp.task('tags', function(done)
+{
+    git.push('origin', { args: ' --tags' }, function (err) 
+    {
+        if (err) throw err;
+    });
+    done();
+});
+
 gulp.task('git', gulp.parallel('add','commit','push'));
