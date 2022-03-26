@@ -34,7 +34,7 @@ gulp build
 
 Watches for changes to the framework and test directory; builds files, sets git process, and runs unit tests.
 
-### Continuous Integration
+### Automation
 
 ```
 gulp watch
