@@ -8,7 +8,7 @@ describe('View', () => {
     }); 
 
     test('returns string', () => {
-        jmfcool.view('item.view', function(view)
+        jmfcool.view('src/item.view', function(view)
         {
             expect(view).toBe(view);
         });

@@ -6,5 +6,5 @@ describe('Display', () => {
     test('should be a function', () => {
         expect(jmfcool.display).toBeInstanceOf(Function);
     }); 
-    
+        
 });

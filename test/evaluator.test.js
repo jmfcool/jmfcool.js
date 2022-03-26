@@ -8,7 +8,7 @@ describe('Evaluator', () => {
     }); 
 
     test('get rendered string tag from model', () => {
-        jmfcool.model('model.json', function(model)
+        jmfcool.model('src/model.json', function(model)
         {
             var evaluator = jmfcool.evaluator({ model:model, obj:'item.name', type:'tags' });
             expect(evaluator).toBe('Oranges');
@@ -16,7 +16,7 @@ describe('Evaluator', () => {
     });
 
     test('get rendered currency tag from model', () => {
-        jmfcool.model('model.json', function(model)
+        jmfcool.model('src/model.json', function(model)
         {
             var evaluator = jmfcool.evaluator({ model:model, obj:'item.cost?currency', type:'tags' });
             expect(evaluator).toBe('18.50');

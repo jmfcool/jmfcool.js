@@ -12,10 +12,10 @@ describe('Hook', () => {
         expect(hook).toBeUndefined();
     });
 
-    test('sets the hook', () => {
-        var hook = jmfcool.hook('response-item');
-        console.log('hook: ', hook);
-        //expect(hook).toBeUndefined();
+    test('returns correct result', () => {
+        const hook = jest.spyOn(jmfcool, 'hook');
+        hook('response-item');
+        expect(hook.mock.calls[0][0]).toBe('response-item');
     });
 
 });

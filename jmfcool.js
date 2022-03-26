@@ -9,15 +9,15 @@ jmfcool.init = () => {};
 
 jmfcool.model = (file, callback) => {
     fetch(file).then(response => response.json()).then(data => callback(data)).catch(error => error);
-},
+};
 
 jmfcool.view = (file, callback) => {
     fetch(file).then(response => response.text()).then(data => callback(data)).catch(error => error);
-}
+};
 
 jmfcool.hook = (name) => {
     return document.getElementsByClassName(name)[0];
-}  
+}; 
 
 jmfcool.display = (args) => {
     var hook = args.hook,

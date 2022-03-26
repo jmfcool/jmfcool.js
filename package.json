@@ -1,6 +1,6 @@
 {
     "name": "Jmfcool.js",
-    "version": "3.5.1", 
+    "version": "3.5.1",
     "type": "module",
     "devDependencies": {
         "@babel/core": "^7.17.8",
@@ -14,17 +14,19 @@
         "jest-fetch-mock": "^3.0.3"
     },
     "scripts": {
-        "test": "jest"
+        "test": "jest",
+        "clear": "jest --clearCache"
     },
     "jest": {
-        "clearMocks": true,
-        "testEnvironment": "jsdom",
         "verbose": true,
         "automock": false,
         "resetMocks": false,
+        "restoreMocks": true,
+        "clearMocks": true,
+        "resetModules": true,
         "setupFiles": [
-            "./test/fetch.js",
-            "./test/dom.js"
+            "./test/src/fetch.js",
+            "./test/src/dom.js"
         ]
     }
 }

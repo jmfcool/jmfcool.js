@@ -8,17 +8,18 @@ describe('Model', () => {
     }); 
 
     test('returns object', () => {
-        jmfcool.model('model.json', function(model)
+        jmfcool.model('src/model.json', function(model)
         {
+            console.log('model: ', model);
             expect(model).toBeInstanceOf(Object);
         });
     }); 
 
     test('set model.item.name', () => {
-        jmfcool.model('model.json', function(model)
+        jmfcool.model('src/model.json', function(model)
         {
             expect(model.item.name).toBe('Oranges');
         });
-    }); 
+    });
 
 });
