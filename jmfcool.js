@@ -77,7 +77,7 @@ jmfcool.object = (args) => {
         model = args.model,
         lookup;
 
-    if(/\?/.test(tags))
+    if(/\?/.test(value))
     {
         value = value.split('?');
         value = value[0];
