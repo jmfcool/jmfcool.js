@@ -51,16 +51,18 @@ gulp.task('pull', function(done)
     done();
 });
 
-gulp.task('add', function() 
+gulp.task('add', function(done) 
 {
-    return gulp.src('.')
+    gulp.src('.')
     .pipe(git.add());
+    done();
 });
 
-gulp.task('commit', function() 
+gulp.task('commit', function(done) 
 {
-    return gulp.src('.')
+    gulp.src('.')
       .pipe(git.commit('Update repo from gulp'));
+    done();
 });
 
 gulp.task('push', function(done) 
