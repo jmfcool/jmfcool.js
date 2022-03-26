@@ -73,7 +73,7 @@ jmfcool.evaluator = (args) => {
 };
 
 jmfcool.object = (args) => {
-    var obj = args.obj,
+    var tags = args.obj,
         model = args.model,
         lookup;
 

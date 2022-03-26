@@ -70,10 +70,8 @@ gulp.task('tags', (callback) => {
     callback();
 });
 
-
 gulp.task('git', gulp.series('add','commit','push'));
 
-gulp.task("watch", (callback) => {
-    gulp.watch('.', gulp.series('build','git','jest') );
-    callback();
+gulp.task("watch", () => {
+    gulp.watch('./jmfcool.js', gulp.series('build','git','jest') );
 });
