@@ -73,17 +73,17 @@ jmfcool.evaluator = (args) => {
 };
 
 jmfcool.object = (args) => {
-    var obj = args.obj,
+    var tags = args.obj,
         model = args.model,
         lookup;
 
-    if(/\?/.test(obj))
+    if(/\?/.test(tags))
     {
-        obj = obj.split('?');
-        obj = obj[0];
+        tags = tags.split('?');
+        tags = tags[0];
     }
 
-    lookup = obj.split('.');
+    lookup = tags.split('.');
 
     for (var i=0; i<lookup.length; i++)
     {
