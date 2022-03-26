@@ -69,8 +69,6 @@ jmfcool.evaluator = (args) => {
 
     if(type === 'tags') result = jmfcool.object({ value:value, model:model });
 
-    console.log('result: ', result);
-
     return result;
 };
 
