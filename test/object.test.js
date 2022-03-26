@@ -30,7 +30,7 @@ describe('Object', () => {
 
     test('return rendered string', () => {
         jmfcool.model('model.json', model);
-        var object = jmfcool.object({ :'item.name', model:model.mock.results[0].value });
+        var object = jmfcool.object({ tags:'item.name', model:model.mock.results[0].value });
         expect(object).toBe('Oranges');
     });
 
