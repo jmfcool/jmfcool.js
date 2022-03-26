@@ -32,6 +32,14 @@ gulp jest
 gulp build
 ```
 
+Watches for changes to the framework and test directory. Builds the files, manages the git process, and runs the unit tests.
+
+### Continuous Integration
+
+```
+gulp watch
+```
+
 ### Setting Version
 
 The commands below sets the version in package.json and creates a tag to push to the repository.
