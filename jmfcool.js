@@ -50,8 +50,6 @@ jmfcool.template = (args) => {
 
     filter = /\$\{([^}]*)}/;
 
-    console.log('tags: ', tags);
-
     for(var i=0; i<tags.length; i++)
     {
         tag = tags[i].match(filter)[0];
@@ -59,8 +57,6 @@ jmfcool.template = (args) => {
         tmp = jmfcool.evaluator({ model:model, value:value, type:'tags' });
         view = view.replace(tag,tmp);
     }
-
-    console.log('obj: ', obj);
     
     return view;
 };
