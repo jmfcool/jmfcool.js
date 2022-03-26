@@ -34,7 +34,7 @@ gulp build
 
 ### Setting Version
 
-The commands below sets the version in package.json and creates a tag to push to the repository to create a release. Look at package.json to see which version it is on.
+The commands below sets the version in package.json and creates a tag to push to the repository to create a release.
 
 ```
 gulp git
