@@ -51,11 +51,12 @@ gulp.task('commit', function(){
       .pipe(git.commit('Update repo from gulp'));
 });
 
-gulp.task('push', function(){
+gulp.task('push', function(done){
     git.push('origin', function (err) 
     {
         if (err) throw err;
     });
+    done();
 });
 
 gulp.task('git', gulp.parallel('add','commit','push'));
