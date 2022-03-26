@@ -1,7 +1,9 @@
-import gulp from 'gulp';
-import minify from 'gulp-minify';
+const gulp = require('gulp');
+const minify = require('gulp-minify');
+const jest = require('gulp-jest').default;
+const git = require('gulp-git');
 
-gulp.task('compress', function() 
+gulp.task('release', function() 
 {
     return gulp.src('jmfcool.js')
     .pipe(minify({
@@ -25,4 +27,26 @@ gulp.task('demo', function()
     .pipe(gulp.dest('demo'))
 });
 
-gulp.task('build', gulp.parallel('compress','demo'));
+gulp.task('jest', function () {
+    return gulp.src('test').pipe(jest({
+      "testEnvironment": "jsdom",
+      "verbose": true,
+      "automock": false,
+      "resetMocks": false,
+      "restoreMocks": true,
+      "clearMocks": true,
+      "resetModules": true
+    }));
+});
+
+gulp.task('add', function(){
+    return gulp.src('.')
+    .pipe(git.add());
+});
+
+gulp.task('commit', function(){
+    return gulp.src('.')
+      .pipe(git.commit('Update repo from gulp'));
+});
+
+gulp.task('build', gulp.parallel('release','demo'));

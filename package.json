@@ -1,27 +1,15 @@
 {
     "name": "Jmfcool.js",
     "version": "3.7.0",
-    "type": "module",
     "devDependencies": {
         "@babel/core": "^7.17.8",
         "@babel/preset-env": "^7.16.11",
         "babel-jest": "^27.5.1",
         "gulp": "^4.0.2",
         "gulp-cli": "^2.3.0",
+        "gulp-git": "^2.10.1",
+        "gulp-jest": "^4.0.4",
         "gulp-minify": "^3.1.0",
         "jest": "^27.5.1"
-    },
-    "scripts": {
-        "test": "jest",
-        "clear": "jest --clearCache"
-    },
-    "jest": {
-        "testEnvironment": "jsdom",
-        "verbose": true,
-        "automock": false,
-        "resetMocks": false,
-        "restoreMocks": true,
-        "clearMocks": true,
-        "resetModules": true
     }
 }
