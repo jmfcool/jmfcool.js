@@ -23,7 +23,7 @@ npm install
 ### Running Tests
 
 ```
-npm test
+gulp jest
 ```
 
 ### Running Build
