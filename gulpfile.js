@@ -39,11 +39,11 @@ gulp.task('jest', () => {
     }));
 });
 
-gulp.task('pull', (done) => {
+gulp.task('pull', (callback) => {
     git.pull('origin', 'main', (err) => {
         if (err) throw err;
     });
-    done();
+    callback();
 });
 
 gulp.task('add', () => {
@@ -56,18 +56,22 @@ gulp.task('commit', () => {
       .pipe(git.commit('Update repo from gulp'));
 });
 
-gulp.task('push', (done) => {
+gulp.task('push', (callback) => {
     git.push('origin', (err) => {
         if (err) throw err;
     });
-    done();
+    callback();
 });
 
-gulp.task('tags', (done) => {
+gulp.task('tags', (callback) => {
     git.push('origin', { args: ' --tags' }, (err) => {
         if (err) throw err;
     });
-    done();
+    callback();
 });
 
 gulp.task('git', gulp.series('add','commit','push'));
+
+gulp.task("watch", () => {
+    gulp.watch('.', gulp.series('build','git','jest') );
+});
