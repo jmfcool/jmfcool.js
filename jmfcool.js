@@ -65,13 +65,13 @@ jmfcool.evaluator = (args) => {
     var value = args.value,
         model = args.model,
         type = args.type,
-        object;
+        result;
 
-    if(type === 'tags') object = jmfcool.object({ value:value, model:model });
+    if(type === 'tags') result = jmfcool.object({ value:value, model:model });
 
-    console.log('object: ', object);
+    console.log('result: ', result);
 
-    return object;
+    return result;
 };
 
 jmfcool.object = (args) => {
