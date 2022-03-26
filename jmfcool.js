@@ -69,6 +69,8 @@ jmfcool.evaluator = (args) => {
 
     if(type === 'tags') object = jmfcool.object({ value:value, model:model });
 
+    console.log('object: ', object);
+
     return object;
 };
 
@@ -114,7 +116,7 @@ jmfcool.formatter = (args) => {
         func = func[check[i]];
         if (func === undefined) return null;
     }
-    
+
     return func;
 };
 
