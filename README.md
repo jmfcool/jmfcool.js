@@ -39,7 +39,6 @@ The commands below sets the version in package.json and creates a tag to push to
 ```
 gulp git
 
---------------------------------------
 
 # From 1.0.0 -> 1.0.1
 npm version patch 
@@ -50,7 +49,6 @@ npm version minor
 # From 1.1.0 -> 2.0.0
 npm version major
 
---------------------------------------
 
 gulp push
 
