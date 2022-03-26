@@ -115,6 +115,8 @@ jmfcool.formatter = (args) => {
         if (obj === undefined) return null;
     }
 
+    console.log('obj: ', obj);
+
     return obj;
 };
 
