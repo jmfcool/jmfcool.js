@@ -70,8 +70,10 @@ gulp.task('tags', (callback) => {
     callback();
 });
 
+
 gulp.task('git', gulp.series('add','commit','push'));
 
-gulp.task("watch", () => {
+gulp.task("watch", (callback) => {
     gulp.watch('.', gulp.series('build','git','jest') );
+    callback();
 });
