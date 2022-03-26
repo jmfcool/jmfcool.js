@@ -73,5 +73,5 @@ gulp.task('tags', (callback) => {
 gulp.task('git', gulp.series('add','commit','push'));
 
 gulp.task("watch", () => {
-    gulp.watch('./jmfcool.js', gulp.series('build','git','jest') );
+    gulp.watch(['./jmfcool.js','test'], gulp.series('build','git','jest') );
 });
