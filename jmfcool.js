@@ -67,12 +67,12 @@ jmfcool.evaluator = (args) => {
         type = args.type,
         object;
 
-    if(type === 'tags') object = jmfcool.getObject({ obj:obj, model:model });
+    if(type === 'tags') object = jmfcool.object({ obj:obj, model:model });
 
     return object;
 };
 
-jmfcool.getObject = (args) => {
+jmfcool.object = (args) => {
     var obj = args.obj,
         model = args.model,
         lookup;
@@ -96,7 +96,7 @@ jmfcool.getObject = (args) => {
             var checks, formatter;
                 checks = args.obj.split('?');
 
-            formatter = jmfcool.getFormatter({ checks:checks[1] });
+            formatter = jmfcool.formatter({ checks:checks[1] });
             model = formatter(model);
         }
     }
@@ -104,7 +104,7 @@ jmfcool.getObject = (args) => {
     return model;
 };
 
-jmfcool.getFormatter = (args) => {
+jmfcool.formatter = (args) => {
     var checks = args.checks,
         formatters = jmfcool.formatters,
         check = checks.split('.');

@@ -22,16 +22,16 @@ jmfcool.model = (file, callback) => {
 
 };
 
-describe('GetObject', () => {
+describe('Object', () => {
 
     test('should be a function', () => {
-        expect(jmfcool.getObject).toBeInstanceOf(Function);
+        expect(jmfcool.object).toBeInstanceOf(Function);
     }); 
 
     test('return rendered string', () => {
         jmfcool.model('model.json', model);
-        var getObject = jmfcool.getObject({ obj:'item.name', model:model.mock.results[0].value });
-        expect(getObject).toBe('Oranges');
+        var object = jmfcool.object({ obj:'item.name', model:model.mock.results[0].value });
+        expect(object).toBe('Oranges');
     });
 
 });
