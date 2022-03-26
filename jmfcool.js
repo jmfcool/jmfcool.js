@@ -40,7 +40,7 @@ jmfcool.render = (args) => {
 jmfcool.template = (args) => {
     var view = args.view,
         model = args.model,
-        tags, tag, obj, tmp, filter;
+        tags, tag, value, tmp, filter;
 
     filter = /\$\{([^}]*)}/g;
 
@@ -55,8 +55,8 @@ jmfcool.template = (args) => {
     for(var i=0; i<tags.length; i++)
     {
         tag = tags[i].match(filter)[0];
-        obj = tags[i].match(filter)[1];
-        tmp = jmfcool.evaluator({ model:model, obj:obj, type:'tags' });
+        value = tags[i].match(filter)[1];
+        tmp = jmfcool.evaluator({ model:model, value:value, type:'tags' });
         view = view.replace(tag,tmp);
     }
 
@@ -66,28 +66,28 @@ jmfcool.template = (args) => {
 };
 
 jmfcool.evaluator = (args) => {
-    var tags = args.obj,
+    var value = args.value,
         model = args.model,
         type = args.type,
         object;
 
-    if(type === 'tags') object = jmfcool.object({ tags:tags, model:model });
+    if(type === 'tags') object = jmfcool.object({ value:value, model:model });
 
     return object;
 };
 
 jmfcool.object = (args) => {
-    var tags = args.tags,
+    var value = args.value,
         model = args.model,
         lookup;
 
     if(/\?/.test(tags))
     {
-        tags = tags.split('?');
-        tags = tags[0];
+        value = value.split('?');
+        value = value[0];
     }
 
-    lookup = tags.split('.');
+    lookup = value.split('.');
 
     for (var i=0; i<lookup.length; i++)
     {
@@ -95,10 +95,10 @@ jmfcool.object = (args) => {
 
         if (model === undefined) return '';
 
-        if(/\?/.test(args.tags))
+        if(/\?/.test(args.value))
         {
             var checks, formatter;
-                checks = args.tags.split('?');
+                checks = args.value.split('?');
 
             formatter = jmfcool.formatter({ checks:checks[1] });
             model = formatter(model);
