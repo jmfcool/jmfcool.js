@@ -114,9 +114,7 @@ jmfcool.formatter = (args) => {
         func = func[check[i]];
         if (func === undefined) return null;
     }
-
-    console.log('func: ', func);
-
+    
     return func;
 };
 
