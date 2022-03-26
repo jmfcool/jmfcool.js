@@ -62,18 +62,18 @@ jmfcool.template = (args) => {
 };
 
 jmfcool.evaluator = (args) => {
-    var obj = args.obj,
+    var tags = args.obj,
         model = args.model,
         type = args.type,
         object;
 
-    if(type === 'tags') object = jmfcool.object({ obj:obj, model:model });
+    if(type === 'tags') object = jmfcool.object({ tags:tags, model:model });
 
     return object;
 };
 
 jmfcool.object = (args) => {
-    var tags = args.obj,
+    var tags = args.tags,
         model = args.model,
         lookup;
 
@@ -91,10 +91,10 @@ jmfcool.object = (args) => {
 
         if (model === undefined) return '';
 
-        if(/\?/.test(args.obj))
+        if(/\?/.test(args.tags))
         {
             var checks, formatter;
-                checks = args.obj.split('?');
+                checks = args.tags.split('?');
 
             formatter = jmfcool.formatter({ checks:checks[1] });
             model = formatter(model);
