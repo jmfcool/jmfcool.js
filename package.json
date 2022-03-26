@@ -6,27 +6,22 @@
         "@babel/core": "^7.17.8",
         "@babel/preset-env": "^7.16.11",
         "babel-jest": "^27.5.1",
-        "cross-fetch": "^3.1.5",
         "gulp": "^4.0.2",
         "gulp-cli": "^2.3.0",
         "gulp-minify": "^3.1.0",
-        "jest": "^27.5.1",
-        "jest-fetch-mock": "^3.0.3"
+        "jest": "^27.5.1"
     },
     "scripts": {
         "test": "jest",
         "clear": "jest --clearCache"
     },
     "jest": {
+        "testEnvironment": "jsdom",
         "verbose": true,
         "automock": false,
         "resetMocks": false,
         "restoreMocks": true,
         "clearMocks": true,
-        "resetModules": true,
-        "setupFiles": [
-            "./test/src/fetch.js",
-            "./test/src/dom.js"
-        ]
+        "resetModules": true
     }
 }

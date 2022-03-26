@@ -12,7 +12,7 @@ describe('Hook', () => {
         expect(hook).toBeUndefined();
     });
 
-    test('returns correct result', () => {
+    test('return correct result', () => {
         const hook = jest.spyOn(jmfcool, 'hook');
         hook('response-item');
         expect(hook.mock.calls[0][0]).toBe('response-item');

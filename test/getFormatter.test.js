@@ -7,7 +7,7 @@ describe('GetFormatter', () => {
         expect(jmfcool.getFormatter).toBeInstanceOf(Function);
     }); 
 
-    test('set function for formatter', () => {
+    test('return formatter function', () => {
         var getFormatter = jmfcool.getFormatter({ checks:'currency' });
         expect(getFormatter).toBeInstanceOf(Function);
     });
