@@ -37,9 +37,7 @@ gulp build
 The commands below sets the version in package.json and creates a tag to push to the repository to create a release. Look at package.json to see which version it is on.
 
 ```
-git add .
-git commit -m "SOME_COMMENT_HERE"
-git push
+gulp git
 
 npm version *.*.* (Example: 3.5.0)
 
