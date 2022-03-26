@@ -72,4 +72,4 @@ gulp.task('push', function(done)
     done();
 });
 
-gulp.task('git', gulp.parallel('pull','add','commit','push'));
+gulp.task('git', gulp.parallel('add','commit','push'));
