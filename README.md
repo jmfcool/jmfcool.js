@@ -50,7 +50,8 @@ npm version minor
 npm version patch 
 
 
-gulp version
+gulp push
+gulp tags
 ```
 
 ## Example

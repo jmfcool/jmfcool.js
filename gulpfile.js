@@ -63,8 +63,6 @@ gulp.task('push', (done) => {
     done();
 });
 
-gulp.task('git', gulp.series('add','commit','push'));
-
 gulp.task('tags', (done) => {
     git.push('origin', { args: ' --tags' }, (err) => {
         if (err) throw err;
@@ -72,4 +70,4 @@ gulp.task('tags', (done) => {
     done();
 });
 
-gulp.task('version', gulp.series('push','tags'));
+gulp.task('git', gulp.series('add','commit','push'));
