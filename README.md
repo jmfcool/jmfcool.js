@@ -43,9 +43,6 @@ git push
 
 npm version *.*.* (Example: 3.5.0)
 
-git status
-git add .
-git commit -m "SOME_COMMENT_HERE"
 git push
 
 git push --tags
