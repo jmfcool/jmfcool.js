@@ -32,7 +32,7 @@ gulp jest
 gulp build
 ```
 
-Watches for changes to the framework and test directory. Builds the files, manages the git process, and runs the unit tests.
+Watches for changes to the framework and test directory; builds files, sets git process, and runs unit tests.
 
 ### Continuous Integration
 
