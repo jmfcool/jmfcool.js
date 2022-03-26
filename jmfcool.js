@@ -57,6 +57,8 @@ jmfcool.template = (args) => {
         tmp = jmfcool.evaluator({ model:model, obj:obj, type:'tags' });
         view = view.replace(tag,tmp);
     }
+
+    console.log('obj: ', obj);
     
     return view;
 };
