@@ -35,27 +35,22 @@ jmfcool.view = (file, callback) => {
 describe('Display', () => {
 
     test('should be a function', () => {
+
         expect(jmfcool.display).toBeInstanceOf(Function);
+    
     }); 
 
-    test('displays rendered view', () => {
+    test('return rendered display', () => {
+    
         jmfcool.model('model.json', model);
         jmfcool.view('item.view', view);
 
-        const spy = jest.spyOn(jmfcool, 'display');
+        document.body.innerHTML = '<div class="response-item"></div>';
 
-        const hook = document.getElementsByClassName(name)['response-user'];
+        const display = jmfcool.display({ view:view.mock.results[0].value, model:model.mock.results[0].value, hook:'response-item' });
         
-        console.log('hook: ', hook);
-
-        const display = jmfcool.display({ view:view.mock.results[0].value, model:model.mock.results[0].value, hook:'response-user' });
+        expect(display).toBe('<div class="item"><p>Your price for Oranges is $18.50!</p></div>');
       
-        console.log('display: ', display);
-
-        //expect(spy).toHaveBeenCalled();
-        //expect(audio.volume).toBe(100);
-      
-        spy.mockRestore();
-      });
+    });
         
 });

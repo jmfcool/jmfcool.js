@@ -25,17 +25,25 @@ jmfcool.model = (file, callback) => {
 describe('Model', () => {
 
     test('should be a function', () => {
+
         expect(jmfcool.model).toBeInstanceOf(Function);
+    
     }); 
 
     test('return object', () => {
+    
         jmfcool.model('model.json', model);
+    
         expect(model.mock.results[0].value).toBeInstanceOf(Object);
+    
     }); 
 
     test('return model.item.name', () => {
+    
         jmfcool.model('model.json', model);
+    
         expect(model.mock.results[0].value.item.name).toBe('Oranges');
+    
     });
 
 });

@@ -35,15 +35,20 @@ jmfcool.view = (file, callback) => {
 describe('Render', () => {
 
     test('should be a function', () => {
+
         expect(jmfcool.render).toBeInstanceOf(Function);
+    
     });
 
     test('returns rendered template', () => {
+    
         jmfcool.model('model.json', model);
         jmfcool.view('item.view', view);
 
-        var render = jmfcool.render({ view:view.mock.results[0].value, model:model.mock.results[0].value });
+        const render = jmfcool.render({ view:view.mock.results[0].value, model:model.mock.results[0].value });
+    
         expect(render).toBe('<div class="item"><p>Your price for Oranges is $18.50!</p></div>');
+    
     });
 
 });
