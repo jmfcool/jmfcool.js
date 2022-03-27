@@ -32,9 +32,9 @@ gulp jest
 gulp build
 ```
 
-Watches for changes to the framework and test directory; builds files, executes git process, and runs unit tests.
-
 ### Automation
+
+Watches for changes to the framework and test directory; builds files, executes git process, and runs unit tests.
 
 ```
 gulp watch
