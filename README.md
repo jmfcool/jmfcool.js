@@ -22,11 +22,11 @@ npm install
 
 ### Running Tests
 
+Runs the unit tests in the test directory.
+
 ```
 gulp jest
 ```
-
-Runs the unit tests in the test directory.
 
 ### Running Build
 
