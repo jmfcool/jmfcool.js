@@ -35,7 +35,10 @@ gulp.task('jest', () => {
       "resetMocks": false,
       "restoreMocks": true,
       "clearMocks": true,
-      "resetModules": true
+      "resetModules": true,
+      "setupFiles": [
+        "./dom.js"
+      ]
     }));
 });
 
