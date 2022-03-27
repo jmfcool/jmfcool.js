@@ -8,7 +8,7 @@ describe('Display', () => {
     }); 
 
     test('displays rendered view', () => {
-        const spy = jest.spyOn(jmfcool, 'dis'); // we pass 'set'
+        const spy = jest.spyOn(jmfcool, 'display'); // we pass 'set'
         audio.volume = 100;
       
         expect(spy).toHaveBeenCalled();
