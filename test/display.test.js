@@ -44,7 +44,7 @@ describe('Display', () => {
 
         const spy = jest.spyOn(jmfcool, 'display');
 
-        const hook = document.getElementsByClassName(name)[0];
+        const hook = document.getElementsByClassName(name)['response-user'];
         
         console.log('hook: ', hook);
 
