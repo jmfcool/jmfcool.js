@@ -8,9 +8,9 @@ The commands below will install the project and allow you to run the Jest tests.
 
 ## Project
 
-Clones repository, directs you to the project, and installs the node packages to run the build and tests.
-
 ### Installing Project
+
+Clones repository, directs you to the project, and installs the node packages to run the build and tests.
 
 ```
 git clone git@github.com:jmfcool/jmfcool.js.git
@@ -26,7 +26,11 @@ npm install
 gulp jest
 ```
 
+Runs the unit tests in the test directory.
+
 ### Running Build
+
+Releases a compressed version of the framework to the release and demo directory.
 
 ```
 gulp build
