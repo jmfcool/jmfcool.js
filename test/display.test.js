@@ -42,7 +42,7 @@ describe('Display', () => {
         jmfcool.model('model.json', model);
         jmfcool.view('item.view', view);
 
-        const spy = jest.spyOn(jmfcool, 'display', 'render');
+        const spy = jest.spyOn(jmfcool, 'display');
         
         const display = jmfcool.display({ view:view.mock.results[0].value, model:model.mock.results[0].value, hook:'response-user' });
       
