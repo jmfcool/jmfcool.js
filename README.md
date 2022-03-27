@@ -22,7 +22,7 @@ npm install
 
 ### Running Tests
 
-Runs the unit tests in the test directory.
+Runs the unit tests in the test directory. The format for creating unit tests is *.test.js.
 
 ```
 gulp jest
