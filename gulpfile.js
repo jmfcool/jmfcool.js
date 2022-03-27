@@ -37,7 +37,7 @@ gulp.task('jest', () => {
       "clearMocks": true,
       "resetModules": true,
       "setupFiles": [
-        "./client.js"
+        "./test/client.js"
       ]
     }));
 });

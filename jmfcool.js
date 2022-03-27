@@ -26,7 +26,7 @@ jmfcool.display = (args) => {
         display, render;
     
     display = jmfcool.hook(hook);
-    this.render = jmfcool.render({ view:view, model:model });
+    render = jmfcool.render({ view:view, model:model });
     display.innerHTML = render;
 };
 
