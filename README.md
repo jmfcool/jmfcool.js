@@ -90,7 +90,7 @@ Hooks are classes that are added to elements which hook the views to the page wh
             {
                 document.addEventListener('click', function()
                 {
-                    document.getElementsByTagName('h3')[0].innerHTML = 'Hello Jane Doe';
+                    document.getElementsByTagName('h3')[0].innerHTML = 'Jane Doe,';
                 });
             }
 
@@ -105,8 +105,9 @@ Hooks are classes that are added to elements which hook the views to the page wh
         </style>
     </head>
     <body>
-        <div class="response-user"></div>
-        <div class="response-item"></div>  
+        <div class="user"></div>
+        <div class="item"></div>  
+        <div class="message"></div> 
     </body>
     <script type="module" src="controller.js"></script>
 </html>
@@ -129,6 +130,7 @@ Models are json objects that are utilized to build the tags when ran through the
 	"item" : 
 	{
 		"cost" : 18.5000,
+        "unit" : 0.55,
 		"name" : "Oranges"
 	}
 }
@@ -143,7 +145,7 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 ```html
 
 <div class="user">
-	<h3>Hello ${user.firstName} ${user.lastName}</h3>
+	<h3>${user.firstName} ${user.lastName},</h3>
 </div>
 
 ```
@@ -152,6 +154,14 @@ Views are used by utilizing tags that are replaced when accessing the objects fr
 
 <div class="item">
 	<p>Your price for ${item.name} is $${item.cost?currency}!</p>
+</div>
+
+```
+### message.view
+```html
+
+<div class="message">
+    <h3>You have 4 ${item.name} at $${item.unit?currency} a peice left ${user.firstName}!</h3>
 </div>
 
 ```
@@ -171,11 +181,15 @@ jmfcool.init()
     {
         jmfcool.view('user.view', function(view)
         {
-            jmfcool.display({ view:view, model:model, hook:'response-user' });
+            jmfcool.display({ view:view, model:model, hook:'user' });
         });
         jmfcool.view('item.view', function(view)
         {
-            jmfcool.display({ view:view, model:model, hook:'response-item' });
+            jmfcool.display({ view:view, model:model, hook:'item' });
+        });
+        jmfcool.view('message.view', function(view)
+        {
+            jmfcool.display({ view:view, model:model, hook:'message' });
         });
     });
 };
@@ -189,8 +203,9 @@ The below results is the result of the views and the model being ran through the
 ### Results
 ```
 
-	Hello John Doe
-
+	###John Doe,
 	Your price for Oranges is $18.50!
+
+    ###You have 4 Oranges at $0.55 a peice left John!
 
 ```
