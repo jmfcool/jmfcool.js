@@ -1,0 +1,3 @@
+<div class="message">
+    <h3>${user.firstName} has 4 ${item.name} at $${item.unit?currency} a peice!</h3>
+</div>

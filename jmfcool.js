@@ -16,7 +16,9 @@ jmfcool.view = (file, callback) => {
 };
 
 jmfcool.hook = (name) => {
-    return document.getElementsByClassName(name)[0];
+    let c = document.getElementsByClassName(name)[0],
+        i = document.getElementById(name);
+    return c ? c : i;
 }; 
 
 jmfcool.display = (args) => {
