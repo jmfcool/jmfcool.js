@@ -203,9 +203,9 @@ The below results is the result of the views and the model being ran through the
 ### Results
 ```
 
-	###John Doe,
-	Your price for Oranges is $18.50!
+    John Doe,
+    Your price for Oranges is $18.50!
 
-    ###You have 4 Oranges at $0.55 a peice left John!
+    You have 4 Oranges at $0.55 a peice left John!
 
 ```
