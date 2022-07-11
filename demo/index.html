@@ -1,23 +1,9 @@
 <htm>
     <head>
         <title>Jmfcool.js</title>
-        <script>
-            
-            var example = example || {};
-
-            example.init = function()
-            {
-                document.addEventListener('click', function()
-                {
-                    document.getElementsByTagName('h3')[0].innerHTML = 'Jane Doe,';
-                });
-            }
-
-            window.addEventListener('load',example.init,false);
-
-        </script>
         <style>
 
+            h3, p { cursor: pointer; }
             h3 { margin-bottom: 0; }
             p { margin-top: 0; }
 
@@ -29,4 +15,25 @@
         <div id="message"></div>
     </body>
     <script type="module" src="controller.js"></script>
+    <script>
+            
+        var example = example || {};
+
+        example.init = function(event)
+        {
+            event.target.innerHTML = 'Replaced';
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+
+            const divs = document.getElementsByTagName('div');
+
+            for(const div of divs)
+            {
+                div.addEventListener('click',example.init,false);
+            }
+
+        });
+
+    </script>
 </html>
