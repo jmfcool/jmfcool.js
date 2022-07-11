@@ -107,7 +107,7 @@ Hooks are classes that are added to elements which hook the views to the page wh
     <body>
         <div class="user"></div>
         <div class="item"></div>  
-        <div class="message"></div> 
+        <div id="message"></div> 
     </body>
     <script type="module" src="controller.js"></script>
 </html>
